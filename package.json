@@ -1,0 +1,24 @@
+{
+  "name": "REST-API_crud",
+  "version": "1.0.0",
+  "description": "build a REST API with Node JS and Express.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apipkurniawan/REST-API_crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apipkurniawan/REST-API_crud/issues"
+  },
+  "homepage": "https://github.com/apipkurniawan/REST-API_crud#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
