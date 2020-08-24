@@ -2,16 +2,11 @@ import express from 'express';
 import { v4 as uuidv4 } from 'uuid';
 
 const router = express.Router();
-const users = [
+let users = [
     // {
     //     firstName: "Apip",
     //     lastName: "kurniawan",
     //     age: 28
-    // },
-    // {
-    //     firstName: "Aah",
-    //     lastName: "Siti Robiah",
-    //     age: 27
     // }
 ];
 
@@ -20,6 +15,12 @@ const users = [
 router.get('/', (req, res) => {
     res.send(users);
 });
+// GET by ID
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
+    const result = users.find((user) => user.id === id);
+    res.send(result);
+});
 // POST
 router.post('/', (req, res) => {
     const user = req.body;
@@ -27,11 +28,11 @@ router.post('/', (req, res) => {
     users.push(userWithId);
     res.send(`User with the name ${user.firstName} added to the Database!`);
 });
-// GET by ID
-router.get('/:id', (req, res) => {
+// DELETE
+router.delete('/:id', (req, res) => {
     const { id } = req.params;
-    const result = users.find((user) => user.id === id);
-    res.send(result);
+    users = users.filter((user) => user.id !== id);
+    res.send(`User with the Id ${id} deleted from the Database!`);
 });
 
 
