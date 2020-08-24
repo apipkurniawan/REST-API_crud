@@ -1,11 +1,11 @@
 import express from 'express';
-import { getUser, createUser, getUserById, deleteUserById, updateUserById } from '../controllers/users.js';
+import { getUsers, createUser, getUserById, deleteUserById, updateUserById } from '../controllers/users.js';
 
 const router = express.Router();
 
 /* all routes in here are starting with /users */
 // GET
-router.get('/', getUser);
+router.get('/', getUsers);
 // GET by ID
 router.get('/:id', getUserById);
 // POST

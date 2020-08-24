@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from 'uuid';
-// import { User } from '../models/user.js';
 
 let users = [];
 
@@ -8,7 +7,7 @@ export const getHomePage = (req, res) => {
     res.send('HELLO FROM HOMEPAGE');
 }
 
-export const getUser = (req, res) => {
+export const getUsers = (req, res) => {
     res.send(users);
 }
 
