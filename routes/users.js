@@ -23,9 +23,15 @@ router.get('/', (req, res) => {
 // POST
 router.post('/', (req, res) => {
     const user = req.body;
-    const userWithId = { ...user, id: uuidv4() }; // menambahkan key dan value baru pada json dengan spread separator(bukan array)
+    const userWithId = { ...user, id: uuidv4() }; // menambahkan object(key&value) baru pada json dengan spread separator(bukan array)
     users.push(userWithId);
     res.send(`User with the name ${user.firstName} added to the Database!`);
+});
+// GET by ID
+router.get('/:id', (req, res) => {
+    const { id } = req.params;
+    const result = users.find((user) => user.id === id);
+    res.send(result);
 });
 
 
